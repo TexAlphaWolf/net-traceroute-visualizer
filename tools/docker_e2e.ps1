@@ -38,10 +38,16 @@ try {
     Assert-Missing $anon "198.51.100"
     Assert-Missing $anon "203.0.113"
 
-    docker run --rm @secure $Image trace -- "-oProxyCommand=x" 2>$null | Out-Null
-    if ($LASTEXITCODE -ne 2) { throw "expected exit code 2 for a bad target, got $LASTEXITCODE" }
+    # a refused target must exit with 2; its message goes to stderr, which Windows PowerShell 5.1 would turn into an
+    # exception under "Stop", so this one command runs with errors not terminating
+    $ErrorActionPreference = "Continue"
+    docker run --rm @secure $Image trace -- "-oProxyCommand=x" 2>&1 | Out-Null
+    $code = $LASTEXITCODE
+    $ErrorActionPreference = "Stop"
+    if ($code -ne 2) { throw "expected exit code 2 for a bad target, got $code" }
     Write-Host "docker end-to-end: OK"
 }
 finally {
-    docker volume rm -f $vol 2>$null | Out-Null
+    $ErrorActionPreference = "Continue"
+    docker volume rm -f $vol 2>&1 | Out-Null
 }
