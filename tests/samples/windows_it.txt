@@ -1,0 +1,8 @@
+
+Traccia instradamento verso 8.8.8.8 su un massimo di 30 punti di passaggio
+
+  1    <1 ms    <1 ms    <1 ms  192.168.1.1
+  2     *        *        *     Richiesta scaduta.
+  3    14 ms    14 ms    15 ms  8.8.8.8
+
+Completata analisi instradamento.

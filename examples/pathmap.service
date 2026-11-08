@@ -1,0 +1,16 @@
+# /etc/systemd/system/pathmap.service  - runs forever, restarts on failure; needs: apt install traceroute
+[Unit]
+Description=pathmap: repeated traceroutes
+After=network-online.target
+
+[Service]
+User=pathmap
+ExecStart=/usr/local/bin/pathmap watch 1.1.1.1 example.org --interval 5m --data /var/lib/pathmap
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/pathmap
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

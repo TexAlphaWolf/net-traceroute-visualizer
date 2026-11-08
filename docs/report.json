@@ -1,0 +1,169 @@
+{
+  "environment": {
+    "python": "3.13.16",
+    "system": "Linux x86_64",
+    "quick": false,
+    "seed": 1000
+  },
+  "parse": {
+    "traces": 3000,
+    "unix_names_same": 3000,
+    "unix_names_total": 3000,
+    "unix_same": 3000,
+    "unix_total": 3000,
+    "windows_same": 3000,
+    "windows_total": 3000,
+    "parse_ms_each": 0.1097
+  },
+  "pipeline": {
+    "targets_with_events": 40,
+    "targets_quiet": 20,
+    "rounds_per_target": 400,
+    "interval_minutes": 15,
+    "with_events": {
+      "truth_shorter": 17,
+      "found_route": 82,
+      "found_shorter": 17,
+      "subkind_ok": 82,
+      "ttl_ok": 80,
+      "ttl_within_1": 82,
+      "naive_b_found_route": 82,
+      "truth_reroute": 53,
+      "found_reroute": 53,
+      "truth_latency": 54,
+      "truth_latency_large": 23,
+      "found_latency_large": 23,
+      "found_latency": 52,
+      "latency_ttl_ok": 52,
+      "latency_naive_ttl_ok": 37,
+      "truth_outage": 21,
+      "found_outage": 21,
+      "outage_ttl_ok": 21,
+      "found_recovery": 21,
+      "truth_latency_small": 13,
+      "runs": 16000,
+      "targets": 40,
+      "hops": 392,
+      "decoy_hops": 6,
+      "decoy_visible": 5,
+      "decoy_visible_flagged": 5,
+      "normal_flagged": 0,
+      "truth_shrink": 31,
+      "found_shrink": 31,
+      "found_latency_small": 11,
+      "truth_grow": 28,
+      "found_grow_as_alternate": 2,
+      "found_grow": 28,
+      "truth_latency_medium": 18,
+      "found_latency_medium": 18,
+      "truth_longer": 12,
+      "found_longer": 12,
+      "truth_blip": 49,
+      "found_grow_as_change": 26,
+      "grow_ttl_ok": 26,
+      "naive_a_alerts": 12861,
+      "naive_b_alerts": 12773,
+      "delay_runs_median": {
+        "route": 2.0,
+        "latency": 3.0,
+        "outage": 2,
+        "shrink": 7,
+        "grow": 2.0
+      },
+      "delay_runs_max": {
+        "route": 2,
+        "latency": 6,
+        "outage": 2,
+        "shrink": 14,
+        "grow": 7
+      },
+      "latency_delta_error_median": 0.014
+    },
+    "quiet": {
+      "runs": 8000,
+      "targets": 20,
+      "hops": 198,
+      "decoy_hops": 5,
+      "decoy_visible": 5,
+      "decoy_visible_flagged": 5,
+      "normal_flagged": 0,
+      "naive_a_alerts": 6135,
+      "naive_b_alerts": 6403,
+      "delay_runs_median": {},
+      "delay_runs_max": {},
+      "latency_delta_error_median": null
+    },
+    "quiet_naive_a_alerts": 6135,
+    "quiet_naive_b_alerts": 6403,
+    "quiet_comparisons": 7980,
+    "truth_route_events": 141
+  },
+  "sweep": {
+    "rows": [
+      {
+        "confirm": 1,
+        "found": 45,
+        "truth": 45,
+        "false_route_changes": 61,
+        "blips": 30,
+        "delay_runs_median": 0
+      },
+      {
+        "confirm": 2,
+        "found": 45,
+        "truth": 45,
+        "false_route_changes": 31,
+        "blips": 30,
+        "delay_runs_median": 1
+      },
+      {
+        "confirm": 3,
+        "found": 45,
+        "truth": 45,
+        "false_route_changes": 0,
+        "blips": 30,
+        "delay_runs_median": 2
+      },
+      {
+        "confirm": 4,
+        "found": 45,
+        "truth": 45,
+        "false_route_changes": 0,
+        "blips": 30,
+        "delay_runs_median": 3
+      },
+      {
+        "confirm": 5,
+        "found": 45,
+        "truth": 45,
+        "false_route_changes": 0,
+        "blips": 30,
+        "delay_runs_median": 4
+      }
+    ]
+  },
+  "cost": {
+    "targets": 100,
+    "rounds": 1000,
+    "runs": 100000,
+    "analyze_s": 2.948,
+    "analyze_ms_per_target": 29.48,
+    "html_s": 0.689,
+    "html_kib": 2921.5,
+    "write_s": 5.724,
+    "read_s": 7.926,
+    "bytes_per_run": 750.3,
+    "kib_per_target_year_5min": 77027.0
+  },
+  "real": {
+    "available": true,
+    "program": "traceroute",
+    "version": "Modern traceroute for Linux, version 2.1.5",
+    "runs": 10,
+    "hops": 1,
+    "reached": true,
+    "run_ms_median": 1.7,
+    "rtt_ms": 0.002,
+    "when": "2026-11-08"
+  }
+}

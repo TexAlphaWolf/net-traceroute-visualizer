@@ -14,3 +14,8 @@ __pycache__/
 node_modules/
 .idea/
 .vscode/
+data/
+traces/
+fail.txt
+.coverage
+pathmap-data/

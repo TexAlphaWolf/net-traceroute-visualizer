@@ -1,0 +1,6 @@
+# crontab -e   (Linux, macOS): trace every 5 minutes, mail yourself a line when something is wrong
+*/5 * * * *  pathmap trace 1.1.1.1 example.org --data /var/lib/pathmap >/dev/null
+# once a day: exit code 1 (and a message) if a target is down or was not traced for a day
+15 8 * * *   pathmap status --data /var/lib/pathmap || echo "pathmap: look at the paths"
+# every Monday: what changed in the last week
+0 9 * * 1    pathmap changes --since 7d --data /var/lib/pathmap
