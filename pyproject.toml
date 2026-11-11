@@ -17,7 +17,7 @@ dev = [
   "pytest-cov>=5",
   "pytest-xdist>=3.5",
   "ruff>=0.4",
-  "mypy>=1.10",
+  "mypy>=2.4.1",
   "playwright>=1.45",  # only to render the README screenshot
 ]
 
